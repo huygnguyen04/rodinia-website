@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UVA CS Rodinia - SRAD</title>
+</head>
+
+<h1 id="srad">SRAD</h1>
+<div class="level1">
+
+<p>
+SRAD (Speckle Reducing Anisotropic Diffusion) [1] is a diffusion method for ultrasonic and radar imaging applications based on partial differential equations (PDEs). It is used to remove locally correlated noise, known as speckles, without destroying important image features. SRAD consists of several pieces of work: image extraction, continuous iterations over the image (preparation, reduction, statistics, computation 1 and computation 2) and image compression. The sequential dependency between all of these stages requires synchronization after each stage (because each stage operates on the entire image). SRAD is also uses as one of the initial stages in the Heart Wall application [2].
+</p>
+
+<p>
+Partitioning of the working set between caches and avoiding of cache trashing contribute to the performance. In CUDA version, each stage is a separate kernel (due to synchronization requirements) that operates on data already residing in GPU memory. The code features efficient GPU reduction of sums. In order to improve GPU performance data was transferred to GPU at the beginning of the code and then transferred back to CPU after all of the computation stages were completed in GPU. Some of the kernels use GPU shared memory for additional improvement in performance. Speedup achievable with CUDA version depends on the image size (up to the point where GPU saturates).
+</p>
+
+</div>
+
+<h3 id="papers">Papers</h3>
+<div class="level3">
+
+<p>
+[1] L. G. Szafaryn, K. Skadron, and J. J. Saucerman. “Experiences Accelerating MATLAB Systems Biology Applications.” In Proceedings of the Workshop on Biomedicine in Computing: Systems, Architectures, and Circuits (BiC) 2009, in conjunction with the 36th IEEE/ACM International Symposium on Computer Architecture (ISCA), June 2009. (<a href="http://www.cs.virginia.edu/~lgs9a/publications/09_isca_bic_paper.pdf" class="urlextern" title="http://www.cs.virginia.edu/~lgs9a/publications/09_isca_bic_paper.pdf" rel="ugc nofollow">pdf</a>)
+</p>
+
+<p>
+[2] Y. Yu, S. Acton, Speckle reducing anisotropic diffusion, IEEE Transactions on Image Processing 11(11)(2002) 1260-1270. (<a href="http://www.cs.virginia.edu/~lgs9a/rodinia/heartwall/srad/paper_2.pdf" class="urlextern" title="http://www.cs.virginia.edu/~lgs9a/rodinia/heartwall/srad/paper_2.pdf" rel="ugc nofollow">pdf</a>)
+</p>
+
+<p>
+Retrieved from “<a href="http://www.cs.virginia.edu/~skadron/wiki/rodinia/index.php?title=SRAD&amp;oldid=670" class="urlextern" title="http://www.cs.virginia.edu/~skadron/wiki/rodinia/index.php?title=SRAD&amp;oldid=670" rel="ugc nofollow">http://www.cs.virginia.edu/~skadron/wiki/rodinia/index.php?title=SRAD&amp;oldid=670</a>”
+</p>
+
+</div>

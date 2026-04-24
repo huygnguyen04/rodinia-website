@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UVA CS Rodinia - B+ Tree</title>
+</head>
+
+<h1 id="b_tree">B+ Tree</h1>
+<div class="level1">
+
+<p>
+For description of B+ Tree, please contact Amittai Aviram who wrote the original serial code, or see the paper listed below.
+</p>
+
+<p>
+B+ Tree application has many internal commands that maintain database and process querries. Only J and K commands had enough parallelism to be ported to parallel languages (OpenMP, CUDA, OpenCL). In these implementations, in case of both J and K, the same algorithms (optimized for exposing fine-grained parallelism) were used for fair comparison purposes. For C/OpenMP execution, it is possible to use the original algorithm.
+</p>
+
+<p>
+Papers:
+[1] J. Fix, A. Wilkes and K. Skadron. “Accelerating Braided B+ Tree Searches on a GPU with CUDA.” ACM Transactions on Database Systems. 2009. (<a href="http://www.cs.virginia.edu/~lgs9a/rodinia/b+tree/b+tree.pdf" class="urlextern" title="http://www.cs.virginia.edu/~lgs9a/rodinia/b+tree/b+tree.pdf" rel="ugc nofollow">pdf</a>)
+</p>
+
+<p>
+Retrieved from “<a href="http://www.cs.virginia.edu/~skadron/wiki/rodinia/index.php?title=B%2B_Tree&amp;oldid=667" class="urlextern" title="http://www.cs.virginia.edu/~skadron/wiki/rodinia/index.php?title=B%2B_Tree&amp;oldid=667" rel="ugc nofollow">http://www.cs.virginia.edu/~skadron/wiki/rodinia/index.php?title=B%2B_Tree&amp;oldid=667</a>”
+</p>
+
+</div>

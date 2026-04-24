@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UVA CS Rodinia - Leukocyte</title>
+</head>
+
+<h1 id="leukocyte">Leukocyte</h1>
+<div class="level1">
+
+<p>
+The leukocyte application detects and tracks rolling leukocytes (white blood cells) in in vivo video microscopy of blood vessels. The velocity of rolling leukocytes provides important information about the inflammation process, which aids biomedical researchers in the development of anti-inflammatory medications.
+</p>
+
+<p>
+In the application, cells are detected in the first video frame and then tracked through subsequent frames. Detection is accomplished by computing for every pixel in the frame the maximal Gradient Inverse Coefficient of Variation (GICOV) score across a range of possible ellipses. The GICOV score for an ellipse is the mean gradient magnitude along the ellipse divided by the standard deviation of the gradient magnitude. The matrix of GICOV scores is then dilated to simplify the process of finding local maxima. For each local maximum, an active contour algorithm is used to more accurately determine the shape of the cell.
+</p>
+
+<p>
+Tracking is accomplished by first computing, in the area surrounding each cell, a Motion Gradient Vector Flow (MGVF) matrix. The MGVF is a gradient field biased in the direction of blood flow, and it is computed using an iterative Jacobian solution procedure. After computing the MGVF, an active contour is used once again to refine the shape and determine the new location of each cell.
+</p>
+
+<p>
+For more information, see: M. Boyer, D. Tarjan, S. T. Acton, and K. Skadron. “Accelerating Leukocyte Tracking using CUDA: A Case Study in Leveraging Manycore Coprocessors.” In Proceedings of the International Parallel and Distributed Processing Symposium (IPDPS), May 2009. <a href="http://www.cs.virginia.edu/~mwb7w/publications/ipdps09.pdf" class="urlextern" title="http://www.cs.virginia.edu/~mwb7w/publications/ipdps09.pdf" rel="ugc nofollow">http://www.cs.virginia.edu/~mwb7w/publications/ipdps09.pdf</a>
+</p>
+
+<p>
+Retrieved from “<a href="http://www.cs.virginia.edu/~skadron/wiki/rodinia/index.php?title=Leukocyte&amp;oldid=183" class="urlextern" title="http://www.cs.virginia.edu/~skadron/wiki/rodinia/index.php?title=Leukocyte&amp;oldid=183" rel="ugc nofollow">http://www.cs.virginia.edu/~skadron/wiki/rodinia/index.php?title=Leukocyte&amp;oldid=183</a>”
+</p>
+
+</div>

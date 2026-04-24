@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UVA CS Rodinia - Hybrid Sort</title>
+</head>
+
+<h1 id="hybrid_sort">Hybrid Sort</h1>
+<div class="level1">
+
+<p>
+Sorting is a general problem widely used in computer science. Sorting can achieve high performance, taking advantage of the parallel resources in modern GPUs. Rodinia includes a sorting algorithm using a hybrid method.
+</p>
+
+<p>
+We would like to acknowledge Erik Sintorn and Ulf Assarsson at Chalmers University Of Technology Gothenburg, Sweden, who contributed their code to the Rodinia benchmark suite. The related paper can be found <a href="http://dx.doi.org/10.1016/j.jpdc.2008.05.012" class="urlextern" title="http://dx.doi.org/10.1016/j.jpdc.2008.05.012" rel="ugc nofollow">here</a>
+</p>
+
+<p>
+Initially, a parallel bucketsort splits the list into enough sublists then to be sorted in parallel using merge-sort. The parallel bucketsort, implemented in NVIDIA’s CUDA, utilizes the synchronization mechanisms, such as atomic increment, that is available on modern GPUs.
+</p>
+
+</div>

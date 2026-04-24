@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UVA CS Rodinia - Myocyte</title>
+</head>
+
+<h1 id="myocyte">Myocyte</h1>
+<div class="level1">
+
+<p>
+Myocyte application models cardiac myocyte (heart muscle cell) and simulates its behavior according to the work by Saucerman and Bers [1]. The model integrates cardiac myocyte electrical activity with the calcineurin pathway, which is a key aspect of the development of heart failure. The model spans large number of temporal scales to reflect how changes in heart rate as observed during exercise or stress contribute to calcineurin pathway activation, which ultimately leads to the expression of numerous genes that remodel the heart’s structure. It can be used to identify potential therapeutic targets that may be useful for the treatment of heart failure. Biochemical reactions, ion transport and electrical activity in the cell are modeled with 91 ordinary differential equations (ODEs) that are determined by more than 200 experimentally validated parameters. The model is simulated by solving this group of ODEs for a specified time interval. The process of ODE solving is based on the causal relationship between values of ODEs at different time steps, thus it is mostly sequential. At every dynamically determined time step, the solver evaluates the model consisting of a set of 91 ODEs and 480 supporting equations to determine behavior of the system at that particular time instance. If evaluation results are not within the expected tolerance at a given time step (usually as a result of incorrect determination of the time step), another calculation attempt is made at a modified (usually reduced) time step. Since the ODEs are stiff (exhibit fast rate of change within short time intervals), they need to be simulated at small time scales with an adaptive step size solver.
+</p>
+
+<p>
+The original code used MATLAB ode45 ODE solver. In the process of accelerating this code, we arrived with the intermediate versions that used single-threaded Sundials CVODE solver which evaluated parallelized model (either OpenMP or CUDA) at each time step. In order to convert entire solver to OpenMP and CUDA codes (to remove some of the operational overheads such as thread/kernel launches in OpenMP/CUDA, respectively, and data transfer overhead in CUDA) we used a simpler solver, from Mathematics Source Library, and tailored it to our needs. The parallelism in the cardiac myocyte model is on a very fine-grained level, close to that of ILP, therefore it is very hard to exploit as DLP or TLB in OpenMP or CUDA code. We were able to divide the model into 4 individual groups that run in parallel. However, even that is not enough work to compensate for some of the OpenMP/CUDA thread/kernel launch overheads, respectively, as well as CUDA data transfer overhead which resulted in performance worse than that of single-threaded C code. Speedup in this code could be achieved only if a customizable accelerator such as FPGA was used for evaluation of the model itself. We also approached the application from another angle and allowed it to run several concurrent simulations, thus turning it into an embarrassingly parallel problem. This version of the code is also useful for scientists who want to run the same simulation with different sets of input parameters. Speedup achieved with CUDA code is variable on the other hand. It depends on the number of concurrent simulations and it saturates around 300 simulations.
+</p>
+
+</div>
+
+<h3 id="papers">Papers</h3>
+<div class="level3">
+
+<p>
+[1] L. G. Szafaryn, K. Skadron, and J. J. Saucerman. “Experiences Accelerating MATLAB Systems Biology Applications.” In Proceedings of the Workshop on Biomedicine in Computing: Systems, Architectures, and Circuits (BiC) 2009, in conjunction with the 36th IEEE/ACM International Symposium on Computer Architecture (ISCA), June 2009. (<a href="http://www.cs.virginia.edu/~lgs9a/publications/09_isca_bic_paper.pdf" class="urlextern" title="http://www.cs.virginia.edu/~lgs9a/publications/09_isca_bic_paper.pdf" rel="ugc nofollow">pdf</a>)
+</p>
+
+</div>
+
+<h3 id="presentation_slides">Presentation Slides</h3>
+<div class="level3">
+
+<p>
+[2] L. G. Szafaryn, K. Skadron, and J. J. Saucerman. “Experiences Accelerating MATLAB Systems Biology Applications - Myocyte”. (<a href="http://www.cs.virginia.edu/~lgs9a/rodinia/myocyte/myocyte.ppt" class="urlextern" title="http://www.cs.virginia.edu/~lgs9a/rodinia/myocyte/myocyte.ppt" rel="ugc nofollow">ppt</a>)
+</p>
+
+<p>
+Retrieved from “<a href="https://www.cs.virginia.edu/~skadron/wiki/rodinia/index.php?title=Myocyte&amp;oldid=668" class="urlextern" title="https://www.cs.virginia.edu/~skadron/wiki/rodinia/index.php?title=Myocyte&amp;oldid=668" rel="ugc nofollow">https://www.cs.virginia.edu/~skadron/wiki/rodinia/index.php?title=Myocyte&amp;oldid=668</a>”
+</p>
+
+</div>

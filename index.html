@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UVA CS Rodinia</title>
+    <style>
+        td,
+        table {
+            text-align: left;
+        }
+        .v40-update {
+            margin: 1rem 0 1.25rem;
+            padding: 0.85rem 1rem;
+            border: 1px solid #b7cee6;
+            border-left: 4px solid #1e5a8a;
+            background: #f4f8fd;
+            border-radius: 4px;
+        }
+        .v40-update h2 {
+            margin: 0 0 0.45rem;
+            color: #114670;
+            border-top: 0;
+            padding-top: 0;
+        }
+        .v40-update p {
+            margin: 0.25rem 0 0.5rem;
+        }
+        .v40-update ul {
+            margin: 0;
+            padding-left: 1.2rem;
+        }
+        .v40-update a {
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<h1 id="rodiniaaccelerating_compute-intensive_applications_with_accelerators">Rodinia: Accelerating Compute-Intensive Applications with Accelerators</h1>
+<div class="level1">
+
+<p>
+A vision of heterogeneous computer systems that incorporate diverse accelerators and automatically select the best 
+computational unit for a particular task is widely shared among researchers and many industry analysts; however, 
+there are no agreed-upon benchmarks to support the research needed in the development of such a platform. There 
+are many suites for parallel computing on general-purpose CPU architectures, but accelerators fall into a gap that is 
+not covered by previous benchmark development. Rodinia is released to address this concern.
+</p>
+
+<p>
+Rodinia is designed for heterogeneous computing infrastructures with OpenMP, OpenCL and CUDA implementations. The latest version, 3.1, was released in 2014. All versions are available on our <a href="http://www.cs.virginia.edu/~skadron/lava/rodinia/downloads.html"><b>download page</b></a>. We are working to update Rodinia and welcome feedback. The benchmarks are described below.
+</p>
+<div class="v40-update">
+<h2 id="new-update-v4-0">new update v4.0</h2>
+<p>
+Latest benchmark pages updated for Rodinia v4.0:
+</p>
+<ul>
+	<li><a href="v4.0/graph_traversal_v4.0.html" class="wikilink1" title="graph_traversal_v4.0" data-wiki-id="graph_traversal_v4.0">Graph Traversal (BFS) - v4.0 update</a></li>
+	<li><a href="v4.0/kmeans_v4.0.html" class="wikilink1" title="kmeans_v4.0" data-wiki-id="kmeans_v4.0">K-means - v4.0 update</a></li>
+</ul>
+</div>
+<div class="table sectionedit1"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 center"> Applications </th><th class="col1"> Dwarves </th><th class="col2"> Domains </th><th class="col3">Parallel Model </th><th class="col4"> Incre. Ver. </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0"><a href="v3.1/leukocyte.html" class="wikilink1" title="leukocyte" data-wiki-id="leukocyte">Leukocyte</a></td><td class="col1">Structured Grid</td><td class="col2">Medical Imaging</td><td class="col3">CUDA, OMP, OCL</td><td class="col4">&check;</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><a href="v3.1/heart_wall.html" class="wikilink1" title="heart_wall" data-wiki-id="heart_wall">Heart Wall</a></td><td class="col1">Structured Grid</td><td class="col2">Medical Imaging</td><td class="col3" colspan="2">CUDA, OMP, OCL</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><a href="v3.1/mummergpu.html" class="wikilink1" title="mummergpu" data-wiki-id="mummergpu">MUMmerGPU</a></td><td class="col1">Graph Traversal</td><td class="col2">Bioinformatics</td><td class="col3" colspan="2">CUDA, OMP</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><a href="v3.1/cfd_solver.html" class="wikilink1" title="cfd_solver" data-wiki-id="cfd_solver">CFD Solver</a></td><td class="col1">Unstructured Grid</td><td class="col2">Fluid Dynamics</td><td class="col3" colspan="2">CUDA, OMP, OCL</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><a href="v3.1/lu_decomposition.html" class="wikilink1" title="lu_decomposition" data-wiki-id="lu_decomposition">LU Decomposition</a></td><td class="col1">Dense Linear Algebra</td><td class="col2">Linear Algebra</td><td class="col3">CUDA, OMP, OCL</td><td class="col4">&check;</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><a href="v3.1/hotspot.html" class="wikilink1" title="hotspot" data-wiki-id="hotspot">HotSpot</a></td><td class="col1">Structured Grid</td><td class="col2">Physics Simulation</td><td class="col3" colspan="2">CUDA, OMP, OCL</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><a href="v3.1/back_propagation.html" class="wikilink1" title="back_propagation" data-wiki-id="back_propagation">Back Propogation</a></td><td class="col1">Unstructured Grid</td><td class="col2">Pattern Recognition</td><td class="col3" colspan="2">CUDA, OMP, OCL</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><a href="v3.1/needleman-wunsch.html" class="wikilink1" title="needleman-wunsch" data-wiki-id="needleman-wunsch">Needleman-Wunsch</a></td><td class="col1">Dynamic Programming</td><td class="col2">Bioinformatics</td><td class="col3">CUDA, OMP, OCL</td><td class="col4">&check;</td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"><a href="v3.1/kmeans.html" class="wikilink1" title="kmeans" data-wiki-id="kmeans">Kmeans</a></td><td class="col1">Dense Linear Algebra</td><td class="col2">Data Mining</td><td class="col3" colspan="2">CUDA, OMP, OCL</td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"><a href="v3.1/graph_traversal.html" class="wikilink1" title="graph_traversal" data-wiki-id="graph_traversal">Breadth-First Search</a></td><td class="col1">Graph Traversal</td><td class="col2">Graph Algorithms</td><td class="col3" colspan="2">CUDA, OMP, OCL</td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"><a href="v3.1/srad.html" class="wikilink1.html" title="srad" data-wiki-id="srad">SRAD</a></td><td class="col1">Structured Grid</td><td class="col2">Image Processing</td><td class="col3">CUDA, OMP, OCL</td><td class="col4">&check;</td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"><a href="v3.1/streamcluster.html" class="wikilink1" title="streamcluster" data-wiki-id="streamcluster">Streamcluster</a></td><td class="col1">Dense Linear Algebra</td><td class="col2">Data Mining</td><td class="col3" colspan="2">CUDA, OMP, OCL</td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"><a href="v3.1/particle_filter.html" class="wikilink1" title="particle_filter" data-wiki-id="particle_filter">Particle Filter</a></td><td class="col1">Structured Grid</td><td class="col2">Medical Imaging</td><td class="col3" colspan="2">CUDA, OMP, OCL</td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"><a href="v3.1/pathfinder.html" class="wikilink1" title="pathfinder" data-wiki-id="pathfinder">PathFinder</a></td><td class="col1">Dynamic Programming</td><td class="col2">Grid Traversal</td><td class="col3" colspan="2">CUDA, OMP, OCL</td>
+	</tr>
+	<tr class="row15">
+		<td class="col0"><a href="v3.1/gaussian_elimination.html" class="wikilink1" title="gaussian_elimination" data-wiki-id="gaussian_elimination">Gaussian Elimination</a></td><td class="col1">Dense Linear Algebra</td><td class="col2">Linear Algebra</td><td class="col3" colspan="2">CUDA, OCL</td>
+	</tr>
+	<tr class="row16">
+		<td class="col0"><a href="v3.1/k-nearest_neighbors.html" class="wikilink1" title="k-nearest_neighbors" data-wiki-id="k-nearest_neighbors">k-Nearest Neighbors</a></td><td class="col1">Dense Linear Algebra</td><td class="col2">Data Mining</td><td class="col3" colspan="2">CUDA, OMP, OCL</td>
+	</tr>
+	<tr class="row17">
+		<td class="col0"><a href="v3.1/lavamd2.html" class="wikilink1" title="lavamd2" data-wiki-id="lavamd2">LavaMD2</a></td><td class="col1">N-Body</td><td class="col2">Molecular Dynamics</td><td class="col3" colspan="2">CUDA, OMP, OCL</td>
+	</tr>
+	<tr class="row18">
+		<td class="col0"><a href="v3.1/myocyte.html" class="wikilink1" title="myocyte" data-wiki-id="myocyte">Myocyte</a></td><td class="col1">Structured Grid</td><td class="col2">Biological Simulation</td><td class="col3" colspan="2">CUDA, OMP, OCL</td>
+	</tr>
+	<tr class="row19">
+		<td class="col0"><a href="v3.1/b_tree.html" class="wikilink1" title="b_tree" data-wiki-id="b_tree">B+ Tree</a></td><td class="col1">Graph Traversal</td><td class="col2">Search</td><td class="col3" colspan="2">CUDA, OMP, OCL</td>
+	</tr>
+	<tr class="row20">
+		<td class="col0"><a href="v3.1/gpudwt.html" class="wikilink1" title="gpudwt" data-wiki-id="gpudwt">GPUDWT</a></td><td class="col1">Spectral Method</td><td class="col2">Image/Video Compression</td><td class="col3" colspan="2">CUDA, OCL</td>
+	</tr>
+	<tr class="row21">
+		<td class="col0"><a href="v3.1/hybrid_sort.html" class="wikilink1" title="hybrid_sort" data-wiki-id="hybrid_sort">Hybrid Sort</a></td><td class="col1">Sorting</td><td class="col2">Sorting Algorithms</td><td class="col3" colspan="2">CUDA, OCL</td>
+	</tr>
+	<tr class="row22">
+		<td class="col0"><a href="v3.1/hotspot3d.html" class="wikilink1" title="hotspot3d" data-wiki-id="hotspot3d">Hotspot3D</a></td><td class="col1">Structured Grid</td><td class="col2">Physics Simulation</td><td class="col3">CUDA, OCL, OMP</td><td class="col4">Hotspot for 3D IC</td>
+	</tr>
+	<tr class="row23">
+		<td class="col0"><a href="v3.1/huffman.html" class="wikilink1" title="huffman" data-wiki-id="huffman">Huffman</a></td><td class="col1">Finite State Machine</td><td class="col2">Lossless data compression</td><td class="col3" colspan="2">CUDA, OCL</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table&quot;,&quot;secid&quot;:1,&quot;range&quot;:&quot;890-2811&quot;} -->
+<p>
+Other applications under evaluation:
+</p>
+<div class="table sectionedit2"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 leftalign">Applications	</th><th class="col1 leftalign">Dwarves	</th><th class="col2 leftalign">Domains	</th><th class="col3 leftalign">Parallel Model	</th><th class="col4">Comment </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0"><a href="v3.1/sqlite_select.html" class="wikilink1" title="sqlite_select" data-wiki-id="sqlite_select">SQLite Select</a></td><td class="col1">Map Reduce</td><td class="col2">Relational Database</td><td class="col3">CUDA</td><td class="col4">This benchmark needs an OCL version and also may be too simple</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><a href="v3.1/3d_stencil.html" class="wikilink1" title="3d_stencil" data-wiki-id="3d_stencil">3D Stencil</a></td><td class="col1">Structured Grid</td><td class="col2">Cellular Automation</td><td class="col3">CUDA</td><td class="col4">Will be superseded by a more sophisticated 3D benchmark</td>
+	</tr>
+</table></div>
+<!-- EDIT{&quot;target&quot;:&quot;table&quot;,&quot;name&quot;:&quot;&quot;,&quot;hid&quot;:&quot;table1&quot;,&quot;secid&quot;:2,&quot;range&quot;:&quot;2851-3167&quot;} -->
+<p>
+<em>1. Ana Lucia Varbanescu and Jianbin Fang, Delft University of Technology contributed the OpenCL version.</em>
+</p>
+
+<p>
+<em>2. In collaboration with <a href="https://essaylamba.com" class="urlextern" title="https://essaylamba.com" rel="ugc nofollow">EssayLamba</a> and Lawrence Livermore National Laboratory.</em>
+</p>
+
+</div>
+
+<h2 id="license">License</h2>
+<div class="level2">
+
+<p>
+Please read the <a href="http://www.cs.virginia.edu/~skadron/lava/rodinia/license.htm"
+>Rodinia license</a>.
+</p>
+
+<p>
+Several applications/libraries come with <a href="http://www.cs.virginia.edu/~kw5na/license_list.htm" class="urlextern" title="http://www.cs.virginia.edu/~kw5na/license_list.htm" rel="ugc nofollow">their own licenses</a>.
+</p>
+
+<p>
+A history of Rodinia releases can be found in the Rodinia <a href="https://rodinia.cs.virginia.edu/rodinia_README.txt">README</a>.
+</p>
+
+<p>
+Also, if your use of Rodinia results in a publication, please cite one of the following:
+</p>
+
+<p>
+[1] S. Che, J. W. Sheaffer, M. Boyer, L. G. Szafaryn, L. Wang, and K. Skadron.  "A Characterization of the Rodinia Benchmark Suite with Comparison to Contemporary CMP Workloads."  In Proceedings of the IEEE International Symposium on Workload Characterization (IISWC), Dec. 2010.
+</p>
+
+<p>
+[2] S. Che, M. Boyer, J. Meng, D. Tarjan, J. W. Sheaffer, S.-H. Lee, and K. Skadron. 
+Rodinia: A Benchmark Suite for Heterogeneous Computing. In Proceedings of the IEEE 
+International Symposium on Workload Characterization (IISWC), pp. 44-54, Oct. 2009.
+</p>
+
+<p>
+[3] S. Che, J. W. Sheaffer, M. Boyer, L. G. Szafaryn, L. Wang, and K. Skadron. 
+A Characterization of the Rodinia Benchmark Suite with Comparison to Contemporary 
+CMP Workloads. In Proceedings of the IEEE International Symposium on Workload 
+Characterization, Dec. 2010.
+</p>
+
+<p>
+<em>This work is supported by NSF grant nos. IIS-0612049, CNS-0916908 and CNS-0615277, a grant from the SRC under task no. 1607, and grants from AMD, NEC labs, and NVIDIA Research.</em>
+</p>
+
+<p>
+Retrieved from <a href="http://www.cs.virginia.edu/~skadron/wiki/index.php?title=Rodinia:Accelerating_Compute-Intensive_Applications_with_Accelerators&amp;oldid=675" class="urlextern" title="http://www.cs.virginia.edu/~skadron/wikiindex.php?title=Rodinia:Accelerating_Compute-Intensive_Applications_with_Accelerators&amp;oldid=675" rel="ugc nofollow">http://www.cs.virginia.edu/~skadron/wiki/index.php?title=Rodinia:Accelerating_Compute-Intensive_Applications_with_Accelerators&amp;oldid=675</a>
+</p>
+
+</div>

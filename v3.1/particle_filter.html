@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UVA CS Rodinia - Particle Filter</title>
+</head>
+
+<h1 id="particle_filter">Particle Filter</h1>
+<div class="level1">
+
+<p>
+The particle filter (PF) is statistical estimator of the location of a target object given noisy measurements of that target’s location and an idea of the object’s path in a Bayesian framework. The PF has a plethora of applications ranging from video surveillance in the form of tracking vehicles, cells and faces to video compression. This particular implementation is optimized for tracking cells, particularly leukocytes and myocardial cells.
+</p>
+
+<p>
+After selecting the target object, the PF begins tracking it by making a series of guesses about the current frame given what is already known from the previous frame. The PF then determines the likelihood of each of those guesses occurring using a predefined likelihood model. Afterwards, the PF normalizes those guesses based on their likelihoods and then sums the normalized guesses to determine the object’s current location. Finally, the PF updates the guesses based on the current location of the object before repeating this process for all remaining frames in the video.
+</p>
+
+<p>
+V1 of the code interfaces with MATLAB. It allows for the PF to be called from within MATLAB and also for the PF to call a predefined MATLAB implementation of the likelihood function from within the OpenMP/Naïve CUDA implementations. However, doing so will cause some slowdown.
+</p>
+
+<p>
+For more information, please read the paper:
+</p>
+
+<p>
+M. A. Goodrum, M. J. Trotter, A. Aksel, S. T. Acton, and K. Skadron. Parallelization of Particle Filter Algorithms. In Proceedings of the 3rd Workshop on Emerging Applications and Many-core Architecture (EAMA), in conjunction with the IEEE/ACM International Symposium on Computer Architecture (ISCA), June 2010. (<a href="http://www.cs.virginia.edu/~skadron/Papers/goodrum_eama2010.pdf" class="urlextern" title="http://www.cs.virginia.edu/~skadron/Papers/goodrum_eama2010.pdf" rel="ugc nofollow">pdf</a>)
+</p>
+
+</div>

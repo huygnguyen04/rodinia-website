@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UVA CS Rodinia - Stream Cluster</title>
+</head>
+
+<h1 id="stream_cluster">Stream Cluster</h1>
+<div class="level1">
+
+<p>
+Our streamcluster kernel is modified upon the streamcluster benchmark in the Parsec suite developed by Princeton University.
+</p>
+
+<p>
+The following is the decription of the streamcluster from Parsec technical report[1]
+</p>
+
+<p>
+“For a stream of input points, it finds a predetermined number of medians so that each point is assigned to its nearest center. The quality of the clustering is measured by the sum of squared distances (SSQ) metric.”
+</p>
+
+<p>
+Our CUDA version parallelized the pgain function. “Given a preliminary solution, the function computes how much cost can be saved by opening a new center. For every new point, it weighs the cost of making it a new center and reassigning some of the existing points to it against the savings caused by minimizing the distance between two points x and y for all points.”
+</p>
+
+<p>
+[1]Christian Bienia, Sanjeev Kumar, Jaswidner Pal Singh and Kai Li. The PARSEC Benchmark Suite: Characterization and Architectural Implications. Technical Report TR-811-08, Princeton University, January 2008.
+</p>
+
+<p>
+Retrieved from “<a href="http://www.cs.virginia.edu/~skadron/wiki/rodinia/index.php?title=Streamcluster&amp;oldid=190" class="urlextern" title="http://www.cs.virginia.edu/~skadron/wiki/rodinia/index.php?title=Streamcluster&amp;oldid=190" rel="ugc nofollow">http://www.cs.virginia.edu/~skadron/wiki/rodinia/index.php?title=Streamcluster&amp;oldid=190</a>”
+</p>
+
+</div>
